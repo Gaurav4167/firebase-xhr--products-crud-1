@@ -140,7 +140,8 @@ function updateProduct(ele) {
             let getIndex = productsArr.findIndex(ele => ele.id === UPDATE_ID)
             productsArr[getIndex] = updatedObj
 
-            document.getElementById(UPDATE_ID).innerHTML = `                            <td>1</td>
+            document.getElementById(UPDATE_ID).innerHTML = `
+                            <td>1</td>
                             <td> ${updatedObj.prodName} </td>
                             <td> ${updatedObj.prodType} </td>
                             <td> ${updatedObj.stock} </td>
@@ -150,6 +151,7 @@ function updateProduct(ele) {
             addBtn.classList.remove("d-none");
             updateBtn.classList.add("d-none")
             form.reset()
+            setSrNumber()
             hideSpinner()
             snackBar("Updated!", "Product Updated Successfully!!!")
         } else {
